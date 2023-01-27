@@ -4,7 +4,7 @@ import '../styles/NavBar.scss';
 function NavBar(){
     return(
         <>
-            <nav class="nav-bar">
+            <nav className="nav-bar">
                 <ul>
                     <li><a href="/">Students</a></li>
                     <li><a href="/books">Books</a></li>

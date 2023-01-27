@@ -1,8 +1,10 @@
 :root {
     --family: Verdana, Geneva, Tahoma, sans-serif;
-    --color-nav: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-    --color-hover: #b6b6b6;
-    --color-primary: rgb(45, 101, 255);
-    --color-warning: rgb(255, 216, 45);
-    --color-error: rgb(255, 45, 45);
+    --color-nav: #2d65ff;
+    --color-primary: #2d65ff;
+    --color-primary-hover: #5c87ff;
+    --color-warning: #ffd82d;
+    --color-warning-hover: #ffec98;
+    --color-error: #ff2d2d;
+    --color-error-hover: #ff8a8a;
   }
