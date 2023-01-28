@@ -1,20 +1,20 @@
 import React from "react";
 import { Button } from "../components/Button";
-import "../styles/List.scss";
+import "../styles/Table.scss";
 
-function ListStudents({ th, td }) {
+function StudentTable({ th }) {
   return (
     <>
       <table className="styled-table">
         <thead>
           <tr>
             {th.map((item) => (
-              <th>{item}</th>
+              <th key={item}>{item}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {td.map((data) => {
+          {/* {td.map((data) => {
             <tr>
               <td>{data.id}</td>
               <td>{data.name}</td>
@@ -28,11 +28,11 @@ function ListStudents({ th, td }) {
                 <Button style='btn-error' click={data.buttonE.click} text={data.buttonE.text} />
               </td>
             </tr>;
-          })}
+          })} */}
         </tbody>
       </table>
     </>
   );
 }
 
-export { ListStudents };
+export { StudentTable };
