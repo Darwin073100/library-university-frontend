@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../components/Button";
 import "../styles/Table.scss";
 
-function StudentTable({ th }) {
+function StudentTable({ th , students, setModal}) {
   return (
     <>
       <table className="styled-table">
@@ -14,8 +14,8 @@ function StudentTable({ th }) {
           </tr>
         </thead>
         <tbody>
-          {/* {td.map((data) => {
-            <tr>
+          {students.map((data) => (
+            <tr key={data.id}>
               <td>{data.id}</td>
               <td>{data.name}</td>
               <td>{data.lastName}</td>
@@ -24,11 +24,11 @@ function StudentTable({ th }) {
               <td>{data.email}</td>
               <td>{data.dateBirth}</td>
               <td>
-                <Button style='btn-primary' click={data.buttonP.click} text={data.buttonP.text} />
-                <Button style='btn-error' click={data.buttonE.click} text={data.buttonE.text} />
+                <Button style='btn-warning' click={()=>setModal(true)} text='upDate' />
+                <Button style='btn-error' click={()=>alert(data.name)} text='Delete' />
               </td>
-            </tr>;
-          })} */}
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

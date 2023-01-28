@@ -2,13 +2,15 @@ import React from "react";
 import "../styles/StudentModal.scss";
 
 function StudentModal({setModal}) {
+  
+  // Evitar el evento submit
   const handleSubmit = (e)=>{
     e.preventDefault();
   };
 
   return (
     <>
-      <form action="" className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <h1>Form Student</h1>
         <div className="inputs">
           <label htmlFor="txtId">Id</label>
