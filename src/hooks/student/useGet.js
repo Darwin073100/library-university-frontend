@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { Student } from '../../service/Student';
 
-
-const API = 'http://localhost:3000/api/v1';
+// Creación del objeto del servicio
+const service = new Student();
 
 function useGet(){
     const [students, setStudents] = useState([]);
 
+    // Consumiendo el servicio
+    const getAll = async()=>{
+        setStudents(await service.getAll());
+    }
+
     useEffect(()=>{
-        const getStudents = async ()=>{
-            const res = await axios.get(`${API}/students`);
-            setStudents(res.data);
-        }
-        getStudents();
+        getAll();
     }, []);
     return students;
 }
