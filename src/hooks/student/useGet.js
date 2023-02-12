@@ -15,7 +15,7 @@ function useGet(){
     useEffect(()=>{
         getAll();
     }, []);
-    return students;
+    return [students, getAll];
 }
 
 export { useGet };

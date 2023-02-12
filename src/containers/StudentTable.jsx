@@ -1,8 +1,17 @@
 import React from "react";
 import { Button } from "../components/Button";
+import { Student } from "../service/Student";
 import "../styles/Table.scss";
-
+const service = new Student();
 function StudentTable({ th , students, setModal}) {
+
+  const deleteStudents = async (id)=>{
+    await service.delete(id);
+  }
+  const getModal = async(id)=>{
+    const data = await service.getById(id);
+    return data;
+  }
   return (
     <>
       <table className="styled-table">
@@ -25,7 +34,7 @@ function StudentTable({ th , students, setModal}) {
               <td>{data.dateBirth}</td>
               <td>
                 <Button style='btn-warning' click={()=>setModal(true)} text='upDate' />
-                <Button style='btn-error' click={()=>alert(data.name)} text='Delete' />
+                <Button style='btn-error' click={()=>deleteStudents(data.id)} text='Delete' />
               </td>
             </tr>
           ))}

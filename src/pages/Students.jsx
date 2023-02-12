@@ -9,7 +9,7 @@ import '../styles/Student.scss';
 function Students(){
     const th = ['Id','Name', 'Last Name', 'No. Control', 'Address', 'email', 'Birth Date','Actions'];
     const [modal, setModal] = useState(false);
-    const students = useGet();
+    const [students] = useGet();
     console.log(students);
     return(
         <>
